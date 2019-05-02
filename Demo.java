@@ -16,6 +16,7 @@ public class Demo {
 
 class Klant{
 	String naam;
+	int geld = 1000;
 	Klant(String naam){
 		this.naam = naam;
 	}
@@ -82,17 +83,21 @@ class RestaurantRuimte{
 }
 class Menu{
 	ArrayList<Gerecht> gerechten = new ArrayList();
+	
 	Menu(){
 		Gerecht s = new Gerecht();
 		s.beschrijving = "Spaghetti";
+		s.prijs = 350;
 		gerechten.add(s);
 		Gerecht s1 = new Gerecht();
-		s1.beschrijving = "Hamburger Speciaal";
+		s1.beschrijving = "Hamburger Speciaal";   // 250
+		s1.prijs = 250;
+		
 		gerechten.add(s1);
 	}
 	void tonen() {
 		for(Gerecht elem : gerechten) {
-			System.out.println(elem.beschrijving);
+			System.out.println(elem.beschrijving  + elem.prijs);
 		}
 	}
 	
