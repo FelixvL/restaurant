@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Demo {
@@ -27,7 +28,7 @@ class RestaurantRuimte{
 	int barkrukken = 2;
 	int tafels = 3;
 	Scanner sc = new Scanner(System.in);
-
+	Menu menu = new Menu();
 	
 	void bezoeken() {
 		System.out.println("1 voor bar 2 voor tafel");
@@ -46,6 +47,8 @@ class RestaurantRuimte{
 				System.out.println("Er zijn geen tafels");
 			} else {
 				System.out.println("Klant gaat aan de tafel zitten");
+				menu.tonen();
+				
 				tafels--;
 			}
 			break;
@@ -77,3 +80,44 @@ class RestaurantRuimte{
 		
 	}
 }
+class Menu{
+	ArrayList<Gerecht> gerechten = new ArrayList();
+	Menu(){
+		Gerecht s = new Gerecht();
+		s.beschrijving = "Spaghetti";
+		gerechten.add(s);
+		Gerecht s1 = new Gerecht();
+		s1.beschrijving = "Hamburger Speciaal";
+		gerechten.add(s1);
+	}
+	void tonen() {
+		for(Gerecht elem : gerechten) {
+			System.out.println(elem.beschrijving);
+		}
+	}
+	
+}
+class Gerecht{
+	String beschrijving;
+	boolean alergieWaarschuwing;
+	int prijs;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
