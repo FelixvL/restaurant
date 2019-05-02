@@ -32,10 +32,20 @@ public class Demo {
 			int plek = sc.nextInt();
 			switch(plek) {
 			case 1:
-				System.out.println("Klant gaat aan de bar zitten");
+				if(RestaurantRuimte.barkrukken == 0) {
+					System.out.println("Er zijn geen barkrukken");
+				}else {
+					System.out.println("Klant gaat aan de bar zitten");
+					RestaurantRuimte.barkrukken--;
+				}
 				break;
 			case 2:
-				System.out.println("Klant gaat aan de tafel zitten");
+				if(RestaurantRuimte.tafels == 0) {
+					System.out.println("Er zijn geen tafels");
+				}else {
+					System.out.println("Klant gaat aan de tafel zitten");
+					RestaurantRuimte.tafels--;
+				}
 				break;
 			default: 
 				System.out.println("maak andere keuze");
@@ -51,6 +61,6 @@ class Klant{
 }
 
 class RestaurantRuimte{
-	static int barkrukken = 8;
-	static int tafels = 10;
+	static int barkrukken = 2;
+	static int tafels = 3;
 }
